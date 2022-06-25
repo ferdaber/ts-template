@@ -16,6 +16,7 @@ module.exports = {
             {
                 isTSX: true,
                 allExtensions: true,
+                allowDeclareFields: true,
             },
         ],
     ],

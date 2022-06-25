@@ -6,7 +6,7 @@ module.exports = {
     },
     parserOptions: {
         tsconfigRootDir: __dirname,
-        project: ["./tsconfig.json"],
+        project: ["./tsconfig.json", "./tsconfig.js.json"],
     },
     settings: {
         react: {
@@ -27,6 +27,7 @@ module.exports = {
 
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
         "@typescript-eslint/ban-types": ["error", { types: { "{}": false } }],
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
@@ -35,7 +36,7 @@ module.exports = {
     ignorePatterns: [".eslintrc.js", "babel.config.js"],
     overrides: [
         {
-            files: ["*.js"],
+            files: ["*.js", "*.mjs", "*.cjs"],
             rules: {
                 "@typescript-eslint/no-var-requires": "off",
             },
